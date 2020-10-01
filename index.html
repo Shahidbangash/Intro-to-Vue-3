@@ -47,13 +47,19 @@
               class="button"
               v-on:click="addtocart"
               :disabled="!in_stock"
-              :class="{ disabledButton : !in_stock}"
+              :class='conditionalClass'
             >
               Add to cart
             </button>
-            <button class="button" v-on:click="removeFromCart">
+           
+              <button class="button" v-on:click="removeFromCart"
+              :disabled = 'getDisabledClass'
+              :class='conditionalClass'
+
+              >
               Remove cart
             </button>
+          </template>
           </div>
         </div>
       </div>
