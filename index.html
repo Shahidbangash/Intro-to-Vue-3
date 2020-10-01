@@ -27,18 +27,34 @@
             <p v-else>Out of stock</p>
             <p v-if="onsale">On Sale</p>
 
-            <h3> Discription</h3>
+            <h3>Discription</h3>
             <ul>
               <li v-for="items in description">{{ items }}</li>
-            </ul> 
-            
-            <h3> Colors</h3>
-            <ul>
-              <li v-for="items in item_details"  :key ="items.id" @mouseover ="changeImage(items.image)">{{ items.color }}</li>
             </ul>
 
-            <button class="button" v-on:click ="addtocart" >Add to cart</button>
-            <button class="button" v-on:click ="removeFromCart" >Remove cart</button>
+            <h3>Colors</h3>
+            <ul>
+              <li
+                class="color-circle"
+                :style="{backgroundColor : items.color}"
+                v-for="items in item_details"
+                :key="items.id"
+                @mouseover="changeImage(items.image)"
+                
+              ></li>
+            </ul>
+
+            <button
+              class="button"
+              v-on:click="addtocart"
+              :disabled="!in_stock"
+              :class = "{ disabledButton : !in_stock}"
+            >
+              Add to cart
+            </button>
+            <button class="button" v-on:click="removeFromCart">
+              Remove cart
+            </button>
           </div>
         </div>
       </div>

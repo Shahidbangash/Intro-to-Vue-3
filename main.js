@@ -2,11 +2,13 @@
 
 const app = Vue.createApp({
   data() {
+      
     return {
       product: "Socks",
       discription: "This is product discription",
       inventory: 10,
       onsale: true,
+      in_stock: false,
       cart: 0,
       image: "./assets/images/socks_blue.jpg",
       color: ["green", "blue"],
@@ -39,4 +41,6 @@ const app = Vue.createApp({
         this.image = image;
     }
   },
+
+  
 });
