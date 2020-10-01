@@ -40,7 +40,6 @@
                 v-for="items in item_details"
                 :key="items.id"
                 @mouseover="changeImage(items.image)"
-                
               ></li>
             </ul>
 
@@ -48,7 +47,7 @@
               class="button"
               v-on:click="addtocart"
               :disabled="!in_stock"
-              :class = "{ disabledButton : !in_stock}"
+              :class="{ disabledButton : !in_stock}"
             >
               Add to cart
             </button>
